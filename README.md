@@ -1,24 +1,79 @@
 *This repository acts as a template for all of Oracle’s GitHub repositories. It contains information about the guidelines for those repositories. All files and sections contained in this template are mandatory, and a GitHub app ensures alignment with these guidelines. To get started with a new repository, replace the italic paragraphs with the respective text for your project.*
 
-# Project name
+# OCI Meta Llama 4 Maverick Transformation Handler for Oracle Digital Assistant
 
-*Describe your project's features, functionality and target audience*
+A sample Oracle Digital Assistant (ODA) LLM Transformation Handler for invoking
+OCI Generative AI Meta Llama 4 Maverick through OCI’s native Chat API.
+
+The handler transforms ODA Common LLM Interface (CLMI) requests into OCI native
+`/20231130/actions/chat` requests, and translates non-streaming and streaming
+OCI responses back into CLMI.
+
+## Features
+
+- Supports OCI Meta Llama 4 Maverick through OCI’s native Generative AI Chat API.
+- Transforms CLMI messages, output-token limits, and streaming settings.
+- Supports non-streaming, streaming, and multi-turn conversations.
+- Maps OCI native errors to ODA CLMI error responses.
+- Includes optional payload logging for local debugging.
+
+## Prerequisites
+
+- Oracle Digital Assistant instance with access to custom LLM Transformation components.
+- OCI tenancy and compartment authorized to use Generative AI.
+- OCI request-signing authentication configured in the ODA LLM API service.
+- Access to Meta Llama 4 Maverick in a supported OCI region or through a dedicated endpoint.
+
+Do not include OCI signing keys, tokens, or other credentials in the handler source.
 
 ## Installation
 
-*Provide detailed step-by-step installation instructions. You can name this section **How to Run** or **Getting Started** instead of **Installation** if that's more acceptable for your project*
+1. Download or clone this repository.
+2. In ODA, create an LLM Transformation component named
+   `ociMaverickLLMTransformationHandler`.
+3. Use the **Other → Custom** template.
+4. Copy the implementation from
+   [`ociMaverickLLMTransformationHandler.js`](./ociMaverickLLMTransformationHandler.js)
+   into the generated handler.
+5. Create an instance-level OCI LLM API service using:
+
+   `POST https://inference.generativeai.<region>.oci.oraclecloud.com/20231130/actions/chat`
+
+6. Configure OCI request-signing authentication and bind the API service to the
+   transformation handler through a skill-level LLM service.
 
 ## Documentation
 
-*Developer-oriented documentation can be published on GitHub, but all product documentation must be published on <https://docs.oracle.com>*
+The complete implementation guide covers prerequisites, API service setup,
+handler deployment, streaming, multi-turn behavior, troubleshooting, and local
+debugging:
+
+- [OCI Meta Llama 4 Maverick Integration Guide](./maverick-docs/ODA_OCI_Maverick_Integration_Guide.html)
+- [Complete transformation handler](./ociMaverickLLMTransformationHandler.js)
+- [Request transformation method](./maverick-docs/transformRequestPayload.js)
+- [Response transformation method](./maverick-docs/transformResponsePayload.js)
+- [Error transformation method](./maverick-docs/transformErrorResponsePayload.js)
+
 
 ## Examples
 
-*Describe any included examples or provide a link to a demo/tutorial*
+The guide includes representative OCI native Chat request payloads and
+validation steps for:
+
+- Non-streaming responses
+- Streaming responses
+- Multi-turn conversations
+- CLMI-to-OCI request transformation
+- OCI-to-CLMI response and error transformation
 
 ## Help
 
-*Inform users on where to get help or how to receive official support from Oracle (if applicable)*
+For ODA configuration and product usage, consult the Oracle Digital Assistant
+documentation referenced in the integration guide.
+
+For issues with this sample implementation, open an issue in this repository
+and include the ODA/OCI error message, sanitized request and response payloads,
+and whether streaming is enabled.
 
 ## Contributing
 
