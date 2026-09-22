@@ -28,12 +28,12 @@ Do not include OCI signing keys, tokens, or other credentials in the handler sou
 
 ## Installation
 
+General information steps. Please review the ODA_OCI_Maverick_Integration_Guide for complete details
 1. Download or clone this repository.
 2. In ODA, create an LLM Transformation component named
    `ociMaverickLLMTransformationHandler`.
 3. Use the **Other → Custom** template.
-4. Copy the implementation from
-   [`ociMaverickLLMTransformationHandler.js`](./ociMaverickLLMTransformationHandler.js)
+4. Copy the implementation from the included code: ociMaverickLLMTransformationHandler.js
    into the generated handler.
 5. Create an instance-level OCI LLM API service using:
 
