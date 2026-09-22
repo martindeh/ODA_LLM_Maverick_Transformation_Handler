@@ -40,11 +40,9 @@ Configure OCI request-signing authentication through the ODA LLM service configu
 
 ## Documentation
 
-The complete implementation guide covers prerequisites, API service setup,
+The complete ODA_OCI_Maverick_Integration_Guide.html implementation guide covers prerequisites, API service setup,
 handler deployment, streaming, multi-turn behavior, troubleshooting, and local
 debugging.
-
-See the [ODA_OCI_Maverick_Integration_Guide.html](./ODA_OCI_Maverick_Integration_Guide.html).
 
 For Oracle Digital Assistant product documentation, see:
 
