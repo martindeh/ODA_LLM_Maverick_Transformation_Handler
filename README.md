@@ -46,13 +46,7 @@ Do not include OCI signing keys, tokens, or other credentials in the handler sou
 
 The complete implementation guide covers prerequisites, API service setup,
 handler deployment, streaming, multi-turn behavior, troubleshooting, and local
-debugging:
-
-- [OCI Meta Llama 4 Maverick Integration Guide](./maverick-docs/ODA_OCI_Maverick_Integration_Guide.html)
-- [Complete transformation handler](./ociMaverickLLMTransformationHandler.js)
-- [Request transformation method](./maverick-docs/transformRequestPayload.js)
-- [Response transformation method](./maverick-docs/transformResponsePayload.js)
-- [Error transformation method](./maverick-docs/transformErrorResponsePayload.js)
+debugging.
 
 
 ## Examples
